@@ -1,0 +1,12 @@
+DBConfig:
+  Address: "127.0.0.1"
+  Port: "3306"
+  User: "root"
+  DBName: "spider"
+  Password: "toortoortoor"
+
+SavePath: "/Users/leemike/go/src/myproj/try/testspider/images/"
+RootUrl: "http://www.aoshu.com/tk/asttl/"
+#XcxUrl: "http://192.168.8.191:8094/"
+XcxUrl: "https://mathoj.liyuanye.club/"
+TestPageUrl: "http://www.aoshu.com/e/20180725/5b582ac218ee6.shtml"
