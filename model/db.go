@@ -39,3 +39,17 @@ func CreateConn() *gorm.DB {
 	}
 	return db
 }
+
+func SaveToDB(qus,ans,grade,queType,sourcePageUrl,content,ansContent string) error {
+	var err error
+	db := CreateConn()
+	tx := db.Begin()
+	tmp := &Question{QuesPic:qus,AnsPic:ans,Grade:grade,QuesType:queType,SourcePageUrl:sourcePageUrl,Content:content,AnsContent:ansContent}
+
+	if err = tx.Model(&Question{}).Save(tmp).Error;err != nil{
+		tx.Rollback()
+		return err
+	}
+	tx.Commit()
+	return nil
+}
